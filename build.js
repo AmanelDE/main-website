@@ -55,10 +55,12 @@ function copyDir(src, dest) {
   }
 }
 
-copyDir('css',    `${OUT}/css`);
-copyDir('js',     `${OUT}/js`);
-copyDir('images', `${OUT}/images`);
-copyDir('fonts',  `${OUT}/fonts`);
+copyDir('css',     `${OUT}/css`);
+copyDir('js',      `${OUT}/js`);
+copyDir('images',  `${OUT}/images`);
+copyDir('fonts',   `${OUT}/fonts`);
+copyDir('_static', `${OUT}`);
 
-console.log(`Kopiert:  ${OUT}/css/, ${OUT}/js/, ${OUT}/images/, ${OUT}/fonts/`);
+console.log(`Kopiert:  ${OUT}/css/, ${OUT}/js/, ${OUT}/images/, ${OUT}/fonts/, ${OUT}/`);
+
 console.log(`\nFertig! Deploy-Ordner: ./${OUT}/`);
