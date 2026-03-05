@@ -277,10 +277,12 @@
       gap: 1.2rem;
     }
     .cat-card {
+      display: block;
       border-radius: 20px;
       overflow: hidden;
       position: relative;
       cursor: pointer;
+      text-decoration: none;
       transition: transform 0.4s cubic-bezier(.25,.8,.25,1);
     }
     .cat-card:hover { transform: scale(0.985); }
