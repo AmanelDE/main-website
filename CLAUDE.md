@@ -56,7 +56,7 @@ All colors are defined as CSS custom properties on `:root`.
 |`--text-mid`  |`#6b4f4a`|Secondary / body text                             |
 |`--text-light`|`#a07c78`|Captions, meta labels                             |
 
-**Footer background:** `#fdf0ec` (light warm cream) — kept bright and friendly, consistent with the overall light aesthetic.
+**Footer background:** `#fdf0ec` (light warm cream) — kept bright and friendly, consistent with the overall light aesthetic. Note: `--text-light` (`#a07c78`) fails WCAG AA contrast on this background (2.54:1). The footer bottom bar (copyright, Impressum, Datenschutz links) uses `--text-mid` instead.
 
 **Partner accent (Zwergperten):** `#3ab54a` — Zwergperten's own brand green, used exclusively for their name and tagline in the partner section.
 
@@ -70,7 +70,7 @@ All colors are defined as CSS custom properties on `:root`.
 |Body / UI         |**DM Sans**         |300, 400, 500   |Clean, modern sans-serif. Used for all body copy, navigation, labels, and buttons.                                       |
 |Partner logo      |**Lilita One**      |400             |Chunky display font matching Zwergperten's own brand identity. Used only for the Zwergperten name in the partner section.|
 
-All fonts are loaded via Google Fonts.
+All fonts are **self-hosted** as woff2 files in `/fonts/`. All 7 variants are preloaded via `<link rel="preload">` in `_partials/head.html` to prevent render-blocking font discovery.
 
 -----
 
@@ -97,7 +97,8 @@ css/
   main.css       ← All styles — edit this
 js/
   main.js        ← Scroll-reveal JS — edit this
-images/          ← Source images
+fonts/           ← Self-hosted woff2 font files (do not edit)
+images/          ← Source images (use AVIF format)
 
 build.js         ← Build script (node build.js)
 
@@ -195,7 +196,7 @@ Subpages share the same nav and footer as the landing page. Nav links on subpage
 ## Key UI Decisions
 
 - **No emojis** — All icons are inline SVGs (Feather icon style, `stroke-width: 1.8`)
-- **Logo rendering** — The Amanel logo PNG has a black background that is removed using `mix-blend-mode: multiply` on a light background
+- **Logo rendering** — The Amanel logo (`logo.avif`) has a black background that is removed using `mix-blend-mode: multiply` on a light background
 - **Zwergperten skyline** — Rendered in black using `filter: grayscale(1) brightness(0)` on a warm cream card background
 - **Scroll reveal** — All secondary sections use an `IntersectionObserver`-based `.reveal` / `.visible` class system with staggered delays
 - **Animations** — Hero logo floats (`float` keyframes), nav fades in from top (`fadeDown`), sections animate up on scroll (`fadeUp`). All motion is CSS-only

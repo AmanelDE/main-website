@@ -97,6 +97,7 @@
     }
     .nav-logo img {
       height: 60px;
+      width: auto;
       mix-blend-mode: multiply;
       display: block;
     }
@@ -186,18 +187,18 @@
     }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.65rem;
-      background: var(--rose);
+      background: var(--rose-dark);
       color: #fff; font-size: 0.88rem; font-weight: 500;
       padding: 0.9rem 2rem; border-radius: 100px;
       text-decoration: none;
       transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-      box-shadow: 0 8px 28px rgba(223,77,105,0.3);
+      box-shadow: 0 8px 28px rgba(198,48,85,0.3);
       width: fit-content;
       letter-spacing: 0.02em;
     }
     .btn-primary:hover {
-      background: var(--rose-dark); transform: translateY(-2px);
-      box-shadow: 0 14px 36px rgba(223,77,105,0.38);
+      background: #a8253e; transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(198,48,85,0.38);
     }
     .btn-primary .arrow {
       width: 18px; height: 18px; border-radius: 50%;
@@ -224,7 +225,7 @@
       font-size: 1.5rem; color: var(--rose); font-weight: 600; line-height: 1;
     }
     .trust-label {
-      font-size: 0.72rem; color: var(--text-light); letter-spacing: 0.04em;
+      font-size: 0.72rem; color: var(--text-mid); letter-spacing: 0.04em;
     }
 
     .hero-right {
@@ -265,6 +266,7 @@
     }
     .hero-logo-big {
       width: min(380px, 82%);
+      height: auto;
       mix-blend-mode: multiply;
       filter: drop-shadow(0 24px 60px rgba(180,60,80,0.18));
       animation: float 6s ease-in-out infinite;
@@ -594,11 +596,11 @@
     }
     .footer-tagline {
       font-size: 0.84rem; line-height: 1.65;
-      color: var(--text-light); max-width: 220px;
+      color: var(--text-mid); max-width: 220px;
     }
-    .footer-col h4 {
+    .footer-col h3 {
       font-size: 0.67rem; font-weight: 500; letter-spacing: 0.16em;
-      text-transform: uppercase; color: #c4948e;
+      text-transform: uppercase; color: var(--text-mid);
       margin-bottom: 1.2rem;
     }
     .footer-col a, .footer-col p {
@@ -609,11 +611,11 @@
     .footer-col a:hover { color: var(--rose); }
     .footer-bottom {
       display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.76rem; color: #b8908a;
+      font-size: 0.76rem; color: var(--text-mid);
     }
     .footer-bottom-links { display: flex; gap: 1.8rem; }
     .footer-bottom-links a {
-      color: #b8908a; text-decoration: none;
+      color: var(--text-mid); text-decoration: none;
       transition: color 0.2s; font-size: 0.76rem;
     }
     .footer-bottom-links a:hover { color: var(--rose); }

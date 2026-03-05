@@ -63,4 +63,16 @@ copyDir('_static', `${OUT}`);
 
 console.log(`Kopiert:  ${OUT}/css/, ${OUT}/js/, ${OUT}/images/, ${OUT}/fonts/, ${OUT}/`);
 
+// Minify CSS
+const cssPath = `${OUT}/css/main.css`;
+let css = fs.readFileSync(cssPath, 'utf8');
+css = css
+  .replace(/\/\*[\s\S]*?\*\//g, '')   // remove comments
+  .replace(/\s+/g, ' ')                // collapse whitespace
+  .replace(/\s*([{}:;,>~+])\s*/g, '$1') // remove space around syntax chars
+  .replace(/;}/g, '}')                  // remove last semicolon in block
+  .trim();
+fs.writeFileSync(cssPath, css, 'utf8');
+console.log(`Minifiziert: ${cssPath}`);
+
 console.log(`\nFertig! Deploy-Ordner: ./${OUT}/`);
