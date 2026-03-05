@@ -74,9 +74,103 @@ All fonts are loaded via Google Fonts.
 
 -----
 
+## Project Structure & Development Workflow
+
+### Directory Layout
+
+```
+_pages/          ← PAGE SOURCES — edit these
+  index.html     ← Main landing page
+  imprint.html   ← Impressum
+  privacy-policy.html
+  jobs.html
+_partials/       ← SHARED COMPONENTS — edit these
+  nav.html       ← Navigation (Single Source of Truth)
+  footer.html    ← Footer (Single Source of Truth)
+css/
+  main.css       ← All styles — edit this
+js/
+  main.js        ← Scroll-reveal JS — edit this
+images/          ← Source images
+
+build.js         ← Build script (node build.js)
+
+dist/            ← BUILD OUTPUT — do not edit directly
+  index.html     ← Served at /
+  imprint/       ← Served at /imprint
+  privacy-policy/← Served at /privacy-policy
+  jobs/          ← Served at /jobs
+  css/
+  js/
+  images/
+```
+
+### How to Make Changes
+
+| Task | Edit | Then run |
+|------|------|----------|
+| Page content | `_pages/<page>.html` | `node build.js` |
+| Navigation or footer | `_partials/nav.html` or `_partials/footer.html` | `node build.js` |
+| Styles | `css/main.css` | `node build.js` |
+| JavaScript | `js/main.js` | `node build.js` |
+| Images | Replace file in `images/` | `node build.js` |
+
+**Never edit files inside `dist/` directly** — they are overwritten on every build.
+
+### Adding a New Page
+
+1. Create `_pages/new-page.html` using this template:
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>[Seitentitel] – Amanel</title>
+  <meta name="description" content="[Beschreibung]" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Lilita+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+
+{{nav}}
+
+<main class="page-content">
+  <h1>[Seitenüberschrift]</h1>
+  <p>[Inhalt]</p>
+</main>
+
+{{footer}}
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>
+```
+
+2. Add an entry to `build.js` in the `pages` array:
+
+```js
+{ src: '_pages/new-page.html', out: 'dist/new-page/index.html' },
+```
+
+3. Run `node build.js`.
+
+The page is then available at `/new-page` after deployment.
+
+### Deployment
+
+Deploy the entire contents of `dist/` to the web server. The folder is self-contained — no build step needed on the server.
+
+-----
+
 ## Page Structure
 
-The website is a single-page design with the following sections in order:
+The website has a **landing page** plus separate **subpages**:
+
+### Landing page (`_pages/index.html`) — sections in order:
 
 1. **Navigation (fixed)** — Logo left, nav links center-right, "Termin buchen" CTA pill
 1. **Hero** — Two-column: headline + trust indicators left; animated logo right on rose-tinted background
@@ -84,7 +178,15 @@ The website is a single-page design with the following sections in order:
 1. **Sortiment / Categories** — Asymmetric bento grid with five product category cards
 1. **Beratung** (`#beratung`) — Full-width teal section: consultation pitch left, opening hours + contact info right
 1. **Partner** (`#partner`) — Zwergperten Frankfurt partnership section with skyline image
-1. **Footer** — Four-column light cream footer with links, contact details, Impressum, Datenschutz
+1. **Footer** (`#kontakt`) — Four-column light cream footer with links, contact details, Impressum, Datenschutz
+
+### Subpages (`.page-content` layout):
+
+- `/imprint` — Impressum (§ 5 TMG)
+- `/privacy-policy` — Datenschutzerklärung (DSGVO)
+- `/jobs` — Karriere
+
+Subpages share the same nav and footer as the landing page. Nav links on subpages use `/#section` (e.g. `/#sortiment`) to navigate back to the landing page and scroll to the anchor.
 
 -----
 
