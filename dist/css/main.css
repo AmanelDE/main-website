@@ -16,7 +16,7 @@
       --text-light: #a07c78;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
     body {
       font-family: 'DM Sans', sans-serif;
