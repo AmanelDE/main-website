@@ -1,4 +1,4 @@
- /* ── Lokal gehostete Schriften (DSGVO-konform, keine externen Verbindungen) ── */
+/* Fonts */
 
 @font-face {
   font-family: 'Playfair Display';
@@ -84,7 +84,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ── */
+    /* Nav */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -121,7 +121,7 @@
     }
     .nav-cta:hover { background: var(--rose-dark) !important; transform: translateY(-1px); }
 
-    /* ── NAV TOGGLE (hamburger) ── */
+    /* Nav toggle */
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -145,7 +145,7 @@
     nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ── HERO ── */
+    /* Hero */
     .hero {
       min-height: 100svh;
       display: grid;
@@ -270,11 +270,11 @@
       animation: float 6s ease-in-out infinite;
     }
 
-    /* ── WAVE ── */
+    /* Wave */
     .wave { line-height: 0; margin-bottom: -1px; }
     .wave svg { display: block; width: 100%; }
 
-    /* ── SECTION SHARED ── */
+    /* Shared section styles */
     .section-label {
       font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--rose);
@@ -292,7 +292,7 @@
       font-weight: 300;
     }
 
-    /* ── VALUES ── */
+    /* Values */
     .section-values {
       background: var(--warm-white);
       padding: 5rem 5rem;
@@ -341,7 +341,7 @@
     }
     .value-card p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
 
-    /* ── CATEGORIES ── */
+    /* Categories */
     .section-categories {
       padding: 5rem 5rem;
       background: var(--cream);
@@ -433,7 +433,7 @@
       z-index: 3;
     }
 
-    /* ── BERATUNG ── */
+    /* Beratung */
     .section-beratung {
       background: linear-gradient(140deg, #0d6278 0%, var(--teal) 50%, #0f7a93 100%);
       padding: 5rem 5rem;
@@ -528,7 +528,7 @@
     }
     .contact-icon svg { width: 14px; height: 14px; color: var(--teal-mid); }
 
-    /* ── PARTNER ── */
+    /* Partner */
     .section-partner {
       background: var(--warm-white);
       padding: 5rem 5rem;
@@ -575,7 +575,7 @@
     .partner-link:hover { color: var(--rose); gap: 0.7rem; }
     .partner-link svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-    /* ── FOOTER ── */
+    /* Footer */
     footer {
       background: #fdf0ec;
       color: #a07c78;
@@ -618,7 +618,7 @@
     }
     .footer-bottom-links a:hover { color: var(--rose); }
 
-    /* ── ANIMATIONS ── */
+    /* Animations */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-14px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -645,7 +645,7 @@
     .reveal-delay-2 { transition-delay: 0.22s; }
     .reveal-delay-3 { transition-delay: 0.34s; }
 
-    /* ── RESPONSIVE ── */
+    /* Responsive */
     @media (max-width: 1100px) {
       nav { padding: 1rem 2.5rem; }
       .hero-left { padding: 8rem 3rem 5rem 3.5rem; }
@@ -705,7 +705,7 @@
       .cats-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
     }
 
-/* ── SECONDARY PAGE CONTENT ── */
+/* Secondary page content */
 .page-content {
   max-width: 780px;
   margin: 0 auto;
