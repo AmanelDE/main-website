@@ -1,12 +1,12 @@
 /**
  * Amanel Website Build Script
  *
- * Liest die Quell-Seiten aus _pages/ und fügt nav und footer aus _partials/ ein.
+ * Liest die Quell-Seiten aus _pages/ und fügt head, nav und footer aus _partials/ ein.
  * Kopiert CSS, JS und Images in den dist/-Ordner.
  * Ausführen: node build.js
  *
  * Neue Seite hinzufügen:
- *   1. Neue Datei in _pages/ anlegen ({{nav}} und {{footer}} als Platzhalter verwenden)
+ *   1. Neue Datei in _pages/ anlegen ({{head}}, {{nav}} und {{footer}} als Platzhalter verwenden)
  *   2. Eintrag in der `pages`-Liste unten ergänzen
  *   3. node build.js ausführen
  */
@@ -16,6 +16,7 @@ const path = require('path');
 
 const OUT = 'dist';
 
+const head   = fs.readFileSync('_partials/head.html',   'utf8');
 const nav    = fs.readFileSync('_partials/nav.html',    'utf8');
 const footer = fs.readFileSync('_partials/footer.html', 'utf8');
 
@@ -34,7 +35,10 @@ const pages = [
 // HTML-Seiten verarbeiten
 for (const page of pages) {
   let html = fs.readFileSync(page.src, 'utf8');
-  html = html.replace('{{nav}}', nav).replace('{{footer}}', footer);
+  html = html
+    .replace('{{head}}', head)
+    .replace('{{nav}}', nav)
+    .replace('{{footer}}', footer);
   fs.mkdirSync(path.dirname(page.out), { recursive: true });
   fs.writeFileSync(page.out, html, 'utf8');
   console.log(`Gebaut:   ${page.out}`);

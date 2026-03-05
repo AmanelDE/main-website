@@ -84,7 +84,13 @@ _pages/          ← PAGE SOURCES — edit these
   imprint.html   ← Impressum
   privacy-policy.html
   jobs.html
+  spielzeug.html
+  kinderwagen.html
+  tragen.html
+  kleidung.html
+  autositze.html
 _partials/       ← SHARED COMPONENTS — edit these
+  head.html      ← Generic <head> content (meta tags, CSS, favicon) — edit this
   nav.html       ← Navigation (Single Source of Truth)
   footer.html    ← Footer (Single Source of Truth)
 css/
@@ -110,6 +116,7 @@ dist/            ← BUILD OUTPUT — do not edit directly
 | Task | Edit | Then run |
 |------|------|----------|
 | Page content | `_pages/<page>.html` | `node build.js` |
+| Generic head content (CSS, favicon, meta tags) | `_partials/head.html` | `node build.js` |
 | Navigation or footer | `_partials/nav.html` or `_partials/footer.html` | `node build.js` |
 | Styles | `css/main.css` | `node build.js` |
 | JavaScript | `js/main.js` | `node build.js` |
@@ -125,14 +132,9 @@ dist/            ← BUILD OUTPUT — do not edit directly
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  {{head}}
   <title>[Seitentitel] – Amanel</title>
   <meta name="description" content="[Beschreibung]" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Lilita+One&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/css/main.css"/>
 </head>
 <body>
 
