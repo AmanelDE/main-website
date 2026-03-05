@@ -88,7 +88,7 @@ _pages/          ← PAGE SOURCES — edit these
   kinderwagen.html
   tragen.html
   kleidung.html
-  autositze.html
+  kindersitze.html
 _partials/       ← SHARED COMPONENTS — edit these
   head.html      ← Generic <head> content (meta tags, CSS, favicon) — edit this
   nav.html       ← Navigation (Single Source of Truth)

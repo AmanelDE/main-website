@@ -29,7 +29,7 @@ const pages = [
   { src: '_pages/kinderwagen.html',    out: `${OUT}/kinderwagen/index.html` },
   { src: '_pages/tragen.html',         out: `${OUT}/tragen/index.html` },
   { src: '_pages/kleidung.html',       out: `${OUT}/kleidung/index.html` },
-  { src: '_pages/autositze.html',      out: `${OUT}/autositze/index.html` },
+  { src: '_pages/kindersitze.html',      out: `${OUT}/kindersitze/index.html` },
 ];
 
 // HTML-Seiten verarbeiten
