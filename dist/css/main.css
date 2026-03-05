@@ -619,5 +619,5 @@
   margin-bottom: 0.8rem;
 }
 .page-content ul { padding-left: 1.4rem; }
-.page-content a { color: var(--teal); transition: color 0.2s; }
-.page-content a:hover { color: var(--rose); }
+.page-content a:not(.btn-primary) { color: var(--teal); transition: color 0.2s; }
+.page-content a:not(.btn-primary):hover { color: var(--rose); }
