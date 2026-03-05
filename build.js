@@ -24,6 +24,11 @@ const pages = [
   { src: '_pages/imprint.html',        out: `${OUT}/imprint/index.html` },
   { src: '_pages/privacy-policy.html', out: `${OUT}/privacy-policy/index.html` },
   { src: '_pages/jobs.html',           out: `${OUT}/jobs/index.html` },
+  { src: '_pages/spielzeug.html',      out: `${OUT}/spielzeug/index.html` },
+  { src: '_pages/kinderwagen.html',    out: `${OUT}/kinderwagen/index.html` },
+  { src: '_pages/tragen.html',         out: `${OUT}/tragen/index.html` },
+  { src: '_pages/kleidung.html',       out: `${OUT}/kleidung/index.html` },
+  { src: '_pages/autositze.html',      out: `${OUT}/autositze/index.html` },
 ];
 
 // HTML-Seiten verarbeiten
